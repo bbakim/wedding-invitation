@@ -12,7 +12,7 @@ const LANGUAGES = ['tr', 'en']
 // Must match the [data-theme] blocks in src/themes.css
 const THEMES = [
   'navy', 'emerald', 'burgundy', 'plum', 'black', 'teal', 'terracotta', 'olive', // dark
-  'ivory', 'blush', 'sage', 'sky', // light
+  'white', 'ivory', 'blush', 'sage', 'sky', // light
 ]
 
 class ConfigError extends Error {}

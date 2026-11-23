@@ -30,6 +30,7 @@
 }
 
 /* Açık temalar için ortak ayarlar · shared settings for light themes */
+[data-theme='white'],
 [data-theme='ivory'],
 [data-theme='blush'],
 [data-theme='sage'],
@@ -147,6 +148,23 @@
 }
 
 /* ───────────── Açık temalar · Light themes ───────────── */
+
+/* Beyaz & gümüş · White & silver */
+[data-theme='white'] {
+  --c-bosphorus: 255 255 255;
+  --c-deep: 253 253 253;
+  --c-ink: 248 248 249;
+  --c-night: 236 237 239;
+  --c-porcelain: 33 33 36;
+  --c-mist: 96 98 104;
+  --c-corn: 112 116 124;
+  --c-bloom: 170 174 180;
+  --c-azure: 140 144 152;
+  --c-paper-ink: 33 33 36;
+  --c-paper-accent: 96 98 104;
+  --c-tint: 215 217 222;
+  --c-shadow: 60 62 68;
+}
 
 /* Fildişi & altın · Ivory & gold */
 [data-theme='ivory'] {
