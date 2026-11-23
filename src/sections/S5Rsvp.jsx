@@ -169,7 +169,7 @@ export default function S5Rsvp() {
           </div>
 
           {status === 'error' && (
-            <p className="text-sm text-rose-300" role="alert">{errorMsg}</p>
+            <p className="text-sm text-danger" role="alert">{errorMsg}</p>
           )}
 
           <button

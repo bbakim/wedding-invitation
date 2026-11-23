@@ -10,7 +10,10 @@ const RESOLVED_ID = '\0' + VIRTUAL_ID
 const ICONS = ['cocktail', 'rings', 'plate', 'music']
 const LANGUAGES = ['tr', 'en']
 // Must match the [data-theme] blocks in src/themes.css
-const THEMES = ['navy', 'emerald', 'burgundy', 'plum', 'black']
+const THEMES = [
+  'navy', 'emerald', 'burgundy', 'plum', 'black', 'teal', 'terracotta', 'olive', // dark
+  'ivory', 'blush', 'sage', 'sky', // light
+]
 
 class ConfigError extends Error {}
 const shown = new Set() // print each warning only once

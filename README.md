@@ -12,7 +12,7 @@ Bilgisayarınıza hiçbir şey kurmadan, tamamen tarayıcıdan kurulup **ücrets
 
 **Bölümler:** zarf + isimler + tarih → aileler + geri sayım → program akışı →
 tarih/saat/mekan + harita → katılım formu → fotoğraf paylaşım linki + teşekkür.
-Türkçe ve İngilizce hazır gelir, **5 renk teması** arasından seçim yapılabilir.
+Türkçe ve İngilizce hazır gelir, **12 renk teması** (8 koyu, 4 açık zeminli) arasından seçim yapılabilir.
 
 ---
 
@@ -87,7 +87,7 @@ Tablonun sütunları: *Zaman Damgası · İsim · Soyisim · Katılım Durumu ·
 | Alan | Açıklama | Örnek |
 |---|---|---|
 | `language` | Sayfa dili: `tr` veya `en` | `tr` |
-| `theme` | Renk teması: `navy`, `emerald`, `burgundy`, `plum`, `black` ([aşağıya bakın](#-renk-teması)) | `emerald` |
+| `theme` | Renk teması: 12 seçenekten biri ([aşağıya bakın](#-renk-teması)) | `emerald` |
 | `couple.name1`, `couple.name2` | Çiftin isimleri | `Ayşe`, `Mehmet` |
 | `date` | Düğün tarihi, **YIL-AY-GÜN** | `2027-06-12` |
 | `time` | Düğün saati, **tırnak içinde** | `"19:00"` |
@@ -110,13 +110,16 @@ Tablonun sütunları: *Zaman Damgası · İsim · Soyisim · Katılım Durumu ·
 `invitation.yaml` içindeki `theme:` satırına aşağıdakilerden birini yazın. Bütün sayfa (zemin, zarf,
 ikonlar, çerçeveler, butonlar) seçtiğiniz renge göre değişir.
 
-| `theme` | Renk |
-|---|---|
-| `navy` | Gece mavisi (varsayılan) |
-| `emerald` | Zümrüt yeşili & altın |
-| `burgundy` | Bordo & gül altını |
-| `plum` | Mürdüm & lavanta |
-| `black` | Siyah & altın |
+| Koyu zemin | Renk | Açık zemin | Renk |
+|---|---|---|---|
+| `navy` | Gece mavisi (varsayılan) | `ivory` | Fildişi & altın |
+| `emerald` | Zümrüt yeşili & altın | `blush` | Pudra pembesi & gül |
+| `burgundy` | Bordo & gül altını | `sage` | Adaçayı yeşili |
+| `plum` | Mürdüm & lavanta | `sky` | Buz mavisi |
+| `black` | Siyah & altın | | |
+| `teal` | Petrol mavisi & bakır | | |
+| `terracotta` | Kiremit & krem | | |
+| `olive` | Zeytin yeşili & keten | | |
 
 ![Renk temaları](docs/themes.png)
 

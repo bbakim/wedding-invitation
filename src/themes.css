@@ -3,18 +3,43 @@
  * Seçim invitation.yaml → theme: ile yapılır. Pick one with invitation.yaml → theme:
  *
  * Her renk "R G B" olarak yazılır. Each color is written as "R G B".
- *   night/ink/deep/bosphorus : koyu zemin tonları (en koyudan açığa) · dark background shades
- *   azure                    : kartın üzerindeki "&" · the "&" on the card
- *   corn                     : vurgu (ikonlar, çerçeveler, butonlar) · accent (icons, borders, buttons)
- *   mist                     : ikincil metin · secondary text
+ *   bosphorus/deep/ink/night : zemin tonları (ortadan kenara) · background shades (center → edge)
  *   porcelain                : ana metin · main text
+ *   mist                     : ikincil metin · secondary text
+ *   corn                     : vurgu (ikonlar, çerçeveler, butonlar) · accent (icons, borders, buttons)
  *   bloom                    : ikinci vurgu · secondary accent
+ *   azure                    : kartın üzerindeki "&" · the "&" on the card
+ *   paper-ink / paper-accent : kartın üzerindeki isimler / tarih · names / date on the card
+ *   tint / shadow            : zarfın renk tonu / gölgeler · envelope tint / shadows
+ *   danger                   : form hata mesajı · form error text
  *
  * Yeni tema eklemek için bir blok kopyalayın, adını değiştirin ve adı
  * scripts/invitation-plugin.js içindeki THEMES listesine ekleyin.
  * To add a theme, copy a block, rename it and add the name to THEMES in
  * scripts/invitation-plugin.js.
  */
+
+/* Koyu temalar için ortak varsayılanlar · shared defaults for dark themes */
+:root {
+  color-scheme: dark;
+  --c-paper-ink: var(--c-ink);
+  --c-paper-accent: var(--c-bosphorus);
+  --c-tint: var(--c-mist);
+  --c-shadow: var(--c-ink);
+  --c-danger: 253 164 175;
+}
+
+/* Açık temalar için ortak ayarlar · shared settings for light themes */
+[data-theme='ivory'],
+[data-theme='blush'],
+[data-theme='sage'],
+[data-theme='sky'] {
+  color-scheme: light;
+  --c-danger: 185 28 28;
+  --engrave-shadow: rgb(var(--c-shadow) / 0.35);
+}
+
+/* ───────────── Koyu temalar · Dark themes ───────────── */
 
 /* Gece mavisi · Midnight navy (varsayılan / default) */
 :root,
@@ -80,4 +105,113 @@
   --c-mist: 226 216 195;
   --c-porcelain: 247 243 234;
   --c-bloom: 224 194 127;
+}
+
+/* Petrol mavisi & bakır · Teal & copper */
+[data-theme='teal'] {
+  --c-night: 4 22 26;
+  --c-ink: 7 36 42;
+  --c-deep: 10 52 60;
+  --c-bosphorus: 16 82 92;
+  --c-azure: 38 128 138;
+  --c-corn: 222 160 110;
+  --c-mist: 200 228 228;
+  --c-porcelain: 242 250 249;
+  --c-bloom: 232 180 140;
+}
+
+/* Kiremit & krem · Terracotta & cream */
+[data-theme='terracotta'] {
+  --c-night: 34 14 8;
+  --c-ink: 54 22 13;
+  --c-deep: 78 32 19;
+  --c-bosphorus: 120 52 30;
+  --c-azure: 176 86 52;
+  --c-corn: 236 184 140;
+  --c-mist: 242 216 196;
+  --c-porcelain: 252 244 236;
+  --c-bloom: 224 150 110;
+}
+
+/* Zeytin yeşili & keten · Olive & linen */
+[data-theme='olive'] {
+  --c-night: 18 22 10;
+  --c-ink: 30 36 17;
+  --c-deep: 44 52 26;
+  --c-bosphorus: 70 82 40;
+  --c-azure: 112 128 62;
+  --c-corn: 214 196 130;
+  --c-mist: 224 228 200;
+  --c-porcelain: 248 249 240;
+  --c-bloom: 190 200 120;
+}
+
+/* ───────────── Açık temalar · Light themes ───────────── */
+
+/* Fildişi & altın · Ivory & gold */
+[data-theme='ivory'] {
+  --c-bosphorus: 255 252 245;
+  --c-deep: 250 245 234;
+  --c-ink: 244 237 222;
+  --c-night: 234 223 202;
+  --c-porcelain: 58 46 30;
+  --c-mist: 110 92 66;
+  --c-corn: 150 112 40;
+  --c-bloom: 196 160 90;
+  --c-azure: 176 138 62;
+  --c-paper-ink: 58 46 30;
+  --c-paper-accent: 140 106 48;
+  --c-tint: 214 196 160;
+  --c-shadow: 90 70 40;
+}
+
+/* Pudra pembesi & gül · Blush & rose */
+[data-theme='blush'] {
+  --c-bosphorus: 255 247 246;
+  --c-deep: 252 238 236;
+  --c-ink: 248 228 226;
+  --c-night: 238 210 208;
+  --c-porcelain: 92 40 52;
+  --c-mist: 140 88 98;
+  --c-corn: 176 86 100;
+  --c-bloom: 220 150 158;
+  --c-azure: 196 110 122;
+  --c-paper-ink: 92 40 52;
+  --c-paper-accent: 168 84 98;
+  --c-tint: 236 190 196;
+  --c-shadow: 120 60 70;
+}
+
+/* Adaçayı yeşili · Sage green */
+[data-theme='sage'] {
+  --c-bosphorus: 246 249 243;
+  --c-deep: 236 242 231;
+  --c-ink: 226 234 219;
+  --c-night: 208 221 199;
+  --c-porcelain: 38 56 42;
+  --c-mist: 84 104 86;
+  --c-corn: 86 116 76;
+  --c-bloom: 150 176 132;
+  --c-azure: 112 140 100;
+  --c-paper-ink: 38 56 42;
+  --c-paper-accent: 84 112 76;
+  --c-tint: 190 210 180;
+  --c-shadow: 60 80 60;
+}
+
+/* Buz mavisi · Ice blue */
+[data-theme='sky'] {
+  --c-bosphorus: 248 251 255;
+  --c-deep: 236 243 251;
+  --c-ink: 224 234 246;
+  --c-night: 204 219 239;
+  --c-porcelain: 26 46 80;
+  --c-mist: 74 98 136;
+  --c-corn: 52 100 160;
+  --c-bloom: 120 160 210;
+  --c-azure: 70 120 180;
+  --c-paper-ink: 26 46 80;
+  --c-paper-accent: 46 90 150;
+  --c-tint: 190 210 236;
+  --c-shadow: 40 60 100;
 }

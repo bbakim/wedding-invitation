@@ -12,7 +12,7 @@ You set it up entirely in the browser, with nothing to install, and host it **fo
 
 **Sections:** envelope with names and date → families and a countdown → schedule →
 date, time and venue with a map → RSVP form → photo sharing link and a thank-you note.
-Turkish and English are built in, and you can choose from **5 color themes**.
+Turkish and English are built in, and you can choose from **12 color themes** (8 dark, 4 light).
 
 ---
 
@@ -87,7 +87,7 @@ Sheet columns: *Timestamp · First name · Last name · Attending · Guests · P
 | Field | Description | Example |
 |---|---|---|
 | `language` | Page language: `tr` or `en` | `en` |
-| `theme` | Color theme: `navy`, `emerald`, `burgundy`, `plum`, `black` ([see below](#-color-theme)) | `emerald` |
+| `theme` | Color theme: one of 12 options ([see below](#-color-theme)) | `emerald` |
 | `couple.name1`, `couple.name2` | The couple's names | `Emma`, `James` |
 | `date` | Wedding date, **YEAR-MONTH-DAY** | `2027-06-12` |
 | `time` | Wedding time, **in quotes** | `"19:00"` |
@@ -110,13 +110,16 @@ To skip an **optional** field, set its value to `""` and that part disappears fr
 Set the `theme:` line in `invitation.yaml` to one of the options below. The whole page (background,
 envelope, icons, frames and buttons) changes to match.
 
-| `theme` | Colors |
-|---|---|
-| `navy` | Midnight navy (default) |
-| `emerald` | Emerald & gold |
-| `burgundy` | Burgundy & rose gold |
-| `plum` | Plum & lavender |
-| `black` | Black & gold |
+| Dark | Colors | Light | Colors |
+|---|---|---|---|
+| `navy` | Midnight navy (default) | `ivory` | Ivory & gold |
+| `emerald` | Emerald & gold | `blush` | Blush & rose |
+| `burgundy` | Burgundy & rose gold | `sage` | Sage green |
+| `plum` | Plum & lavender | `sky` | Ice blue |
+| `black` | Black & gold | | |
+| `teal` | Teal & copper | | |
+| `terracotta` | Terracotta & cream | | |
+| `olive` | Olive & linen | | |
 
 ![Color themes](docs/themes.png)
 

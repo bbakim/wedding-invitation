@@ -14,6 +14,9 @@ export default {
         mist: 'rgb(var(--c-mist) / <alpha-value>)',
         porcelain: 'rgb(var(--c-porcelain) / <alpha-value>)',
         bloom: 'rgb(var(--c-bloom) / <alpha-value>)',
+        'paper-ink': 'rgb(var(--c-paper-ink) / <alpha-value>)',
+        'paper-accent': 'rgb(var(--c-paper-accent) / <alpha-value>)',
+        danger: 'rgb(var(--c-danger) / <alpha-value>)',
       },
       fontFamily: {
         display: ['"Cormorant Garamond"', 'Georgia', 'serif'],

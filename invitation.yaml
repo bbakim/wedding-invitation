@@ -18,13 +18,17 @@ language: tr
 
 
 # TR: Renk teması. Seçenekler:
-#       navy     = gece mavisi        emerald = zümrüt yeşili & altın
-#       burgundy = bordo & gül altını plum    = mürdüm & lavanta
-#       black    = siyah & altın
+#   Koyu zemin: navy       = gece mavisi           emerald = zümrüt & altın
+#               burgundy   = bordo & gül altını    plum    = mürdüm & lavanta
+#               black      = siyah & altın         teal    = petrol mavisi & bakır
+#               terracotta = kiremit & krem        olive   = zeytin yeşili & keten
+#   Açık zemin: ivory      = fildişi & altın       blush   = pudra pembesi & gül
+#               sage       = adaçayı yeşili        sky     = buz mavisi
 # EN: Color theme. Options:
-#       navy     = midnight navy      emerald = emerald & gold
-#       burgundy = burgundy & rose gold  plum = plum & lavender
-#       black    = black & gold
+#   Dark:  navy (midnight navy), emerald (emerald & gold), burgundy (burgundy & rose gold),
+#          plum (plum & lavender), black (black & gold), teal (teal & copper),
+#          terracotta (terracotta & cream), olive (olive & linen)
+#   Light: ivory (ivory & gold), blush (blush & rose), sage (sage green), sky (ice blue)
 theme: navy
 
 
