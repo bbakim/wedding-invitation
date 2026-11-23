@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-ink text-porcelain font-body antialiased;
+    overflow-x: hidden;
+  }
+}
+
+@layer components {
+  /* Gravür çerçeve — davetiyenin imza öğesi */
+  .engrave {
+    position: relative;
+    border: 1px solid rgba(242, 246, 251, 0.28);
+    box-shadow:
+      inset 0 0 0 1px rgba(242, 246, 251, 0.06),
+      0 24px 60px -30px rgba(0, 0, 0, 0.7);
+  }
+
+  .eyebrow {
+    @apply font-body uppercase text-corn/80 text-xs tracking-widest2;
+  }
+}
+
+/* Scroll reveal */
+@keyframes fade-up {
+  0% {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+}
+.reveal.is-visible {
+  animation: fade-up 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+}
+
+/* Form alanları */
+.field {
+  @apply w-full rounded-none border-b border-mist/30 bg-transparent px-1 py-2
+         font-body text-porcelain placeholder-mist/35 outline-none transition-colors
+         focus:border-corn;
+}
+.field option {
+  @apply bg-ink text-porcelain;
+}
+.field-label {
+  @apply mb-1 block font-body text-[0.72rem] uppercase tracking-[0.18em] text-mist/70;
+}

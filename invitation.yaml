@@ -1,0 +1,113 @@
+# ╔══════════════════════════════════════════════════════════════════╗
+# ║  DAVETİYE AYARLARI  ·  INVITATION SETTINGS                        ║
+# ║                                                                  ║
+# ║  TR: Davetiyenizi kişiselleştirmek için sadece bu dosyayı        ║
+# ║      düzenleyin. "#" ile başlayan satırlar açıklamadır.          ║
+# ║  EN: Edit only this file to personalise your invitation.         ║
+# ║      Lines starting with "#" are comments.                       ║
+# ║                                                                  ║
+# ║  İpucu / Tip: ":" işaretinden sonraki kısmı değiştirin, soldaki  ║
+# ║  adlara ve satır başı boşluklarına dokunmayın.                   ║
+# ║  Change the part after ":", keep the names and indentation.      ║
+# ╚══════════════════════════════════════════════════════════════════╝
+
+
+# TR: Davetiyenin dili:  tr = Türkçe,  en = English
+# EN: Invitation language:  tr = Turkish,  en = English
+language: tr
+
+
+# TR: Çiftin isimleri (zarfın üzerinde "İsim1 & İsim2" olarak görünür)
+# EN: The couple's names (shown on the envelope as "Name1 & Name2")
+couple:
+  name1: Ayşe
+  name2: Mehmet
+
+
+# TR: Düğün tarihi (YIL-AY-GÜN) ve saati (SS:DD, tırnak içinde)
+# EN: Wedding date (YEAR-MONTH-DAY) and time (HH:MM, in quotes)
+date: 2027-06-12
+time: "19:00"
+
+
+# TR: Aileler. 2 aile, 1 aile veya hiç yazmayabilirsiniz.
+#     Hiç istemiyorsanız:   families: []
+# EN: Families. You can list 2, 1 or none.
+#     To hide this part:    families: []
+families:
+  - names: Fatma & Ali
+    surname: Yılmaz
+  - names: Zeynep & Hasan
+    surname: Demir
+
+
+# TR: Program akışı. İstediğiniz kadar satır ekleyip silebilirsiniz.
+#     icon seçenekleri: cocktail (kokteyl), rings (yüzük), plate (yemek), music (müzik)
+# EN: Event schedule. Add or remove as many items as you like.
+#     icon options: cocktail, rings, plate, music
+program:
+  - title: Karşılama & Kokteyl
+    time: "19:00"
+    icon: cocktail
+  - title: Nikah
+    time: "20:00"
+    icon: rings
+  - title: Yemek Servisi
+    time: "20:30"
+    icon: plate
+  - title: Eğlence
+    time: "21:30"
+    icon: music
+
+
+# TR: Düğün mekanı
+#     mapsUrl  : Google Haritalar'da mekanı açıp "Paylaş" → "Bağlantıyı kopyala"
+#     mapImage : (opsiyonel) harita görseli. Görseli "assets" klasörüne yükleyip
+#                dosya adını buraya yazın. İstemiyorsanız boş bırakın: ""
+# EN: Wedding venue
+#     mapsUrl  : open the venue in Google Maps → "Share" → "Copy link"
+#     mapImage : (optional) a map picture. Upload it to the "assets" folder and
+#                write its file name here. Leave empty ("") for no picture.
+venue:
+  name: Çamlıca Bahçe Salonu
+  address: Örnek Mah. Çiçek Sk. No:1, 34000 Üsküdar/İstanbul
+  mapsUrl: https://maps.google.com/?q=Uskudar+Istanbul
+  mapImage: ""
+
+
+# TR: Katılım bildirimi (LCV) formu
+#     scriptUrl : Google E-Tablolar bağlantısı (kurulum: README → "Katılım formu").
+#                 Boş bırakılırsa form deneme modunda çalışır, yanıtlar kaydedilmez.
+#     deadline  : (opsiyonel) son bildirim tarihi, YIL-AY-GÜN. İstemiyorsanız ""
+#     phone     : (opsiyonel) telefonla bildirim için numara. İstemiyorsanız ""
+#     note      : (opsiyonel) formun altındaki not. İstemiyorsanız ""
+# EN: RSVP form
+#     scriptUrl : Google Sheets link (setup: README → "RSVP form").
+#                 If empty, the form runs in demo mode and answers are not saved.
+#     deadline  : (optional) reply-by date, YEAR-MONTH-DAY. Leave "" to hide.
+#     phone     : (optional) phone number guests can call. Leave "" to hide.
+#     note      : (optional) note under the form. Leave "" to hide.
+rsvp:
+  scriptUrl: ""
+  deadline: 2027-05-30
+  phone: "0 (500) 000 00 00"
+  note: "Çocuklara iyi uykular dileriz. Davetiyemiz iki kişiliktir."
+
+
+# TR: (opsiyonel) Misafirlerin fotoğraf yükleyeceği link (ör. Google Drive klasörü).
+#     Boş bırakılırsa fotoğraf bölümü gizlenir.
+# EN: (optional) Link where guests can upload photos (e.g. a Google Drive folder).
+#     If empty, the photo section is hidden.
+photos:
+  url: "https://drive.google.com/"
+
+
+# TR: (ileri seviye) Sayfadaki hazır metinlerden herhangi birini değiştirin.
+#     Tüm anahtarlar için: src/i18n.js   Örnek:
+#       texts:
+#         heroTitle: BİZ EVLENİYORUZ
+# EN: (advanced) Override any built-in text on the page.
+#     All keys are listed in: src/i18n.js   Example:
+#       texts:
+#         heroTitle: WE'RE TYING THE KNOT
+texts: {}
