@@ -17,6 +17,17 @@
 language: tr
 
 
+# TR: Renk teması. Seçenekler:
+#       navy     = gece mavisi        emerald = zümrüt yeşili & altın
+#       burgundy = bordo & gül altını plum    = mürdüm & lavanta
+#       black    = siyah & altın
+# EN: Color theme. Options:
+#       navy     = midnight navy      emerald = emerald & gold
+#       burgundy = burgundy & rose gold  plum = plum & lavender
+#       black    = black & gold
+theme: navy
+
+
 # TR: Çiftin isimleri (zarfın üzerinde "İsim1 & İsim2" olarak görünür)
 # EN: The couple's names (shown on the envelope as "Name1 & Name2")
 couple:

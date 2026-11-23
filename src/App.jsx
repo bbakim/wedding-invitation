@@ -9,10 +9,10 @@ import { program } from './config.js'
 export default function App() {
   return (
     <>
-      {/* Tek parça Boğaz alacakaranlığı zemini — tüm sayfayı saran sabit arka plan */}
+      {/* Tek parça zemin (renkleri temadan) — tüm sayfayı saran sabit arka plan */}
       <div
         aria-hidden="true"
-        className="fixed inset-0 -z-10 bg-[radial-gradient(125%_80%_at_50%_0%,#15467E_0%,#0F2C52_32%,#0B1F3A_62%,#081628_100%)]"
+        className="page-bg fixed inset-0 -z-10"
       />
 
       {/* Tek uzun, kaydırılabilir sayfa — bölümler arası eşit ritim */}

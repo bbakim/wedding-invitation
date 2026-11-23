@@ -1,0 +1,83 @@
+/*
+ * Renk temaları · Color themes
+ * Seçim invitation.yaml → theme: ile yapılır. Pick one with invitation.yaml → theme:
+ *
+ * Her renk "R G B" olarak yazılır. Each color is written as "R G B".
+ *   night/ink/deep/bosphorus : koyu zemin tonları (en koyudan açığa) · dark background shades
+ *   azure                    : kartın üzerindeki "&" · the "&" on the card
+ *   corn                     : vurgu (ikonlar, çerçeveler, butonlar) · accent (icons, borders, buttons)
+ *   mist                     : ikincil metin · secondary text
+ *   porcelain                : ana metin · main text
+ *   bloom                    : ikinci vurgu · secondary accent
+ *
+ * Yeni tema eklemek için bir blok kopyalayın, adını değiştirin ve adı
+ * scripts/invitation-plugin.js içindeki THEMES listesine ekleyin.
+ * To add a theme, copy a block, rename it and add the name to THEMES in
+ * scripts/invitation-plugin.js.
+ */
+
+/* Gece mavisi · Midnight navy (varsayılan / default) */
+:root,
+[data-theme='navy'] {
+  --c-night: 8 22 40;
+  --c-ink: 11 31 58;
+  --c-deep: 15 44 82;
+  --c-bosphorus: 21 70 126;
+  --c-azure: 46 107 176;
+  --c-corn: 127 168 216;
+  --c-mist: 185 208 236;
+  --c-porcelain: 242 246 251;
+  --c-bloom: 91 143 214;
+}
+
+/* Zümrüt & altın · Emerald & gold */
+[data-theme='emerald'] {
+  --c-night: 6 20 15;
+  --c-ink: 11 42 32;
+  --c-deep: 16 57 43;
+  --c-bosphorus: 26 90 67;
+  --c-azure: 47 122 92;
+  --c-corn: 212 178 106;
+  --c-mist: 207 227 214;
+  --c-porcelain: 244 248 242;
+  --c-bloom: 226 201 138;
+}
+
+/* Bordo & gül altını · Burgundy & rose gold */
+[data-theme='burgundy'] {
+  --c-night: 26 7 12;
+  --c-ink: 46 13 22;
+  --c-deep: 67 18 31;
+  --c-bosphorus: 107 30 48;
+  --c-azure: 154 53 80;
+  --c-corn: 226 169 160;
+  --c-mist: 240 211 211;
+  --c-porcelain: 251 243 241;
+  --c-bloom: 217 140 140;
+}
+
+/* Mürdüm & lavanta · Plum & lavender */
+[data-theme='plum'] {
+  --c-night: 18 10 28;
+  --c-ink: 31 18 48;
+  --c-deep: 45 26 69;
+  --c-bosphorus: 70 42 107;
+  --c-azure: 110 76 158;
+  --c-corn: 191 165 227;
+  --c-mist: 221 208 240;
+  --c-porcelain: 247 243 252;
+  --c-bloom: 168 138 214;
+}
+
+/* Siyah & altın · Black & gold */
+[data-theme='black'] {
+  --c-night: 10 10 10;
+  --c-ink: 20 20 20;
+  --c-deep: 30 30 30;
+  --c-bosphorus: 46 43 38;
+  --c-azure: 140 111 61;
+  --c-corn: 207 174 107;
+  --c-mist: 226 216 195;
+  --c-porcelain: 247 243 234;
+  --c-bloom: 224 194 127;
+}

@@ -12,7 +12,7 @@ You set it up entirely in the browser, with nothing to install, and host it **fo
 
 **Sections:** envelope with names and date → families and a countdown → schedule →
 date, time and venue with a map → RSVP form → photo sharing link and a thank-you note.
-Turkish and English are built in.
+Turkish and English are built in, and you can choose from **5 color themes**.
 
 ---
 
@@ -87,6 +87,7 @@ Sheet columns: *Timestamp · First name · Last name · Attending · Guests · P
 | Field | Description | Example |
 |---|---|---|
 | `language` | Page language: `tr` or `en` | `en` |
+| `theme` | Color theme: `navy`, `emerald`, `burgundy`, `plum`, `black` ([see below](#-color-theme)) | `emerald` |
 | `couple.name1`, `couple.name2` | The couple's names | `Emma`, `James` |
 | `date` | Wedding date, **YEAR-MONTH-DAY** | `2027-06-12` |
 | `time` | Wedding time, **in quotes** | `"19:00"` |
@@ -104,6 +105,20 @@ Sheet columns: *Timestamp · First name · Last name · Attending · Guests · P
 | `texts` | **Advanced:** override built-in texts. All keys are in [`src/i18n.js`](src/i18n.js) | `heroTitle: WE'RE TYING THE KNOT` |
 
 To skip an **optional** field, set its value to `""` and that part disappears from the page.
+
+### 🎨 Color theme
+Set the `theme:` line in `invitation.yaml` to one of the options below. The whole page (background,
+envelope, icons, frames and buttons) changes to match.
+
+| `theme` | Colors |
+|---|---|
+| `navy` | Midnight navy (default) |
+| `emerald` | Emerald & gold |
+| `burgundy` | Burgundy & rose gold |
+| `plum` | Plum & lavender |
+| `black` | Black & gold |
+
+![Color themes](docs/themes.png)
 
 ### 🖼️ Adding a picture (map)
 Open the `assets` folder in your repository, use **Add file → Upload files** to upload the picture
@@ -148,6 +163,8 @@ npm run preview   # serves the build locally
 - `src/config.js` holds the values derived from the settings (date formats, countdown target) and the `t()` text helper.
 - `src/i18n.js` contains every built-in text (TR/EN). To add a language, add a dictionary and a
   `locales` entry there, then add the code to `LANGUAGES` in `scripts/invitation-plugin.js`.
+- `src/themes.css` holds the color themes. To add one, copy a block, change the colors and add its
+  name to `THEMES` in `scripts/invitation-plugin.js`.
 - `apps-script/Code.gs` is the Apps Script that writes RSVPs to Google Sheets.
 - **Netlify / Vercel / Cloudflare Pages:** import the repository with build command `npm run build` and
   output directory `dist`. No other settings are needed.

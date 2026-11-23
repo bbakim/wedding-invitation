@@ -9,6 +9,8 @@ const VIRTUAL_ID = 'virtual:invitation'
 const RESOLVED_ID = '\0' + VIRTUAL_ID
 const ICONS = ['cocktail', 'rings', 'plate', 'music']
 const LANGUAGES = ['tr', 'en']
+// Must match the [data-theme] blocks in src/themes.css
+const THEMES = ['navy', 'emerald', 'burgundy', 'plum', 'black']
 
 class ConfigError extends Error {}
 const shown = new Set() // print each warning only once
@@ -60,6 +62,12 @@ export function loadInvitation(file) {
   const language = str(raw.language || 'tr').toLowerCase()
   if (!LANGUAGES.includes(language)) {
     err(`language "tr" veya "en" olmalı (yazılan: "${language}").`, `language must be "tr" or "en" (got "${language}").`)
+  }
+
+  // theme
+  const theme = str(raw.theme || 'navy').toLowerCase()
+  if (!THEMES.includes(theme)) {
+    err(`theme şunlardan biri olmalı: ${THEMES.join(', ')} (yazılan: "${theme}").`, `theme must be one of: ${THEMES.join(', ')} (got "${theme}").`)
   }
 
   // couple
@@ -143,7 +151,7 @@ export function loadInvitation(file) {
   }
 
   return {
-    config: { language, couple: { name1, name2 }, date, time, families, program, venue, rsvp, photos, texts },
+    config: { language, theme, couple: { name1, name2 }, date, time, families, program, venue, rsvp, photos, texts },
     warnings,
   }
 }
@@ -197,7 +205,7 @@ export default function invitationPlugin({ file }) {
       const title = c.texts.pageTitle || (c.language === 'en' ? `${names} · We're getting married` : `${names} · Evleniyoruz`)
       const desc = c.language === 'en' ? `${names}'s wedding invitation — ${c.date}, ${c.venue.name}` : `${names} düğün davetiyesi — ${c.date}, ${c.venue.name}`
       return html
-        .replace(/<html lang="[^"]*">/, `<html lang="${c.language}">`)
+        .replace(/<html[^>]*>/, `<html lang="${c.language}" data-theme="${c.theme}">`)
         .replace(/<title>[\s\S]*?<\/title>/, `<title>${escapeHtml(title)}</title>`)
         .replace(/<meta name="description" content="[^"]*"\s*\/>/, `<meta name="description" content="${escapeHtml(desc)}" />`)
     },

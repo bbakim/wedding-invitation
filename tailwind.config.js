@@ -3,16 +3,17 @@ export default {
   content: ['./index.html', './src/**/*.{js,jsx}'],
   theme: {
     extend: {
+      // Renkler temadan gelir (src/index.css → [data-theme]). Colors come from the active theme.
       colors: {
-        // Mavi mürekkep & Boğaz paleti
-        ink: '#0B1F3A',      // derin lacivert mürekkep (zemin)
-        deep: '#0F2C52',     // koyu mavi
-        bosphorus: '#15467E',// Boğaz mavisi
-        azure: '#2E6BB0',    // orta mavi
-        corn: '#7FA8D8',     // peygamber çiçeği mavisi
-        mist: '#B9D0EC',     // açık sis mavisi
-        porcelain: '#F2F6FB',// porselen / metin
-        bloom: '#5B8FD6',    // küçük çiçek aksanı
+        night: 'rgb(var(--c-night) / <alpha-value>)',
+        ink: 'rgb(var(--c-ink) / <alpha-value>)',
+        deep: 'rgb(var(--c-deep) / <alpha-value>)',
+        bosphorus: 'rgb(var(--c-bosphorus) / <alpha-value>)',
+        azure: 'rgb(var(--c-azure) / <alpha-value>)',
+        corn: 'rgb(var(--c-corn) / <alpha-value>)',
+        mist: 'rgb(var(--c-mist) / <alpha-value>)',
+        porcelain: 'rgb(var(--c-porcelain) / <alpha-value>)',
+        bloom: 'rgb(var(--c-bloom) / <alpha-value>)',
       },
       fontFamily: {
         display: ['"Cormorant Garamond"', 'Georgia', 'serif'],

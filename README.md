@@ -12,7 +12,7 @@ Bilgisayarınıza hiçbir şey kurmadan, tamamen tarayıcıdan kurulup **ücrets
 
 **Bölümler:** zarf + isimler + tarih → aileler + geri sayım → program akışı →
 tarih/saat/mekan + harita → katılım formu → fotoğraf paylaşım linki + teşekkür.
-Türkçe ve İngilizce hazır gelir.
+Türkçe ve İngilizce hazır gelir, **5 renk teması** arasından seçim yapılabilir.
 
 ---
 
@@ -87,6 +87,7 @@ Tablonun sütunları: *Zaman Damgası · İsim · Soyisim · Katılım Durumu ·
 | Alan | Açıklama | Örnek |
 |---|---|---|
 | `language` | Sayfa dili: `tr` veya `en` | `tr` |
+| `theme` | Renk teması: `navy`, `emerald`, `burgundy`, `plum`, `black` ([aşağıya bakın](#-renk-teması)) | `emerald` |
 | `couple.name1`, `couple.name2` | Çiftin isimleri | `Ayşe`, `Mehmet` |
 | `date` | Düğün tarihi, **YIL-AY-GÜN** | `2027-06-12` |
 | `time` | Düğün saati, **tırnak içinde** | `"19:00"` |
@@ -104,6 +105,20 @@ Tablonun sütunları: *Zaman Damgası · İsim · Soyisim · Katılım Durumu ·
 | `texts` | **İleri seviye:** hazır metinleri değiştirmek için. Tüm anahtarlar [`src/i18n.js`](src/i18n.js) dosyasında | `heroTitle: BİZ EVLENİYORUZ` |
 
 **Opsiyonel** alanları kullanmak istemiyorsanız değerlerini `""` yapın; ilgili kısım sayfadan kalkar.
+
+### 🎨 Renk teması
+`invitation.yaml` içindeki `theme:` satırına aşağıdakilerden birini yazın. Bütün sayfa (zemin, zarf,
+ikonlar, çerçeveler, butonlar) seçtiğiniz renge göre değişir.
+
+| `theme` | Renk |
+|---|---|
+| `navy` | Gece mavisi (varsayılan) |
+| `emerald` | Zümrüt yeşili & altın |
+| `burgundy` | Bordo & gül altını |
+| `plum` | Mürdüm & lavanta |
+| `black` | Siyah & altın |
+
+![Renk temaları](docs/themes.png)
 
 ### 🖼️ Görsel eklemek (harita)
 Reponuzda `assets` klasörüne girin, **Add file → Upload files** ile görseli yükleyin
@@ -149,6 +164,8 @@ npm run preview   # build çıktısını yerelde açar
 - `src/config.js`: ayarlardan türetilen değerler (tarih biçimleri, geri sayım hedefi) ve `t()` metin fonksiyonu.
 - `src/i18n.js`: tüm hazır metinler (TR/EN). Yeni dil eklemek için buraya bir sözlük ve
   `locales` içine bir satır ekleyin, ardından `scripts/invitation-plugin.js` içindeki `LANGUAGES` listesini güncelleyin.
+- `src/themes.css`: renk temaları. Yeni tema için bir blok kopyalayıp renkleri değiştirin ve adını
+  `scripts/invitation-plugin.js` içindeki `THEMES` listesine ekleyin.
 - `apps-script/Code.gs`: LCV yanıtlarını Google E-Tablo'ya yazan Apps Script.
 - **Netlify / Vercel / Cloudflare Pages:** repoyu içe aktarın. Build komutu `npm run build`,
   çıktı klasörü `dist`. Ek ayar gerekmez.
